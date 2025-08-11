@@ -12,7 +12,7 @@ export default function Hero() {
                     </h1>
                     <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
                         <p className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-                            I&apos;m a fullstack developper
+                            I&apos;m a fullstack developper living in Niort, France.
                         </p>
                         <div className="mt-10 flex items-center gap-x-6">
                             <a

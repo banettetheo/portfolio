@@ -125,7 +125,7 @@ export default function TechJourney() {
             <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
                     <Card className="mx-auto p-4 shadow overflow-hidden max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                        <Tabs defaultValue="account">
+                        <Tabs defaultValue={tabs[0].name}>
                             <TabsList>
                                 {tabs.map((tab, index) => (
                                     <TabsTrigger key={tab.name} value={tab.name}>{tab.name}</TabsTrigger>

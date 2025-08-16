@@ -13,7 +13,23 @@ const tabs: TechJourneyContent[] = [
                 description: 'A certified bot discord with over 75 servers',
                 date: 'March 2021',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: 'javascript.svg'
+                    },
+                    {
+                        name: 'Docker',
+                        url: '',
+                        img: 'docker.svg'
+                    },
+                    {
+                        name: 'MongoDB',
+                        url: '',
+                        img: 'mongo.svg'
+                    }
+                ],
                 flags: []
             },
             {
@@ -21,15 +37,42 @@ const tabs: TechJourneyContent[] = [
                 description: 'A furniture management tool for business',
                 date: 'May 2024',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'Java Spring Boot',
+                        url: '',
+                        img: 'spring-boot.svg'
+                    },
+                    {
+                        name: 'Angular',
+                        url: '',
+                        img: 'angular.svg'
+                    },
+                    {
+                        name: 'PostgreSQL',
+                        url: '',
+                        img: 'postgresql.svg'
+                    }
+                ],
                 flags: []
             },
             {
-                name: 'Bot Discord Lucarios',
-                description: 'A certified bot discord with over 75 servers',
-                date: 'March 2021',
+                name: 'Portfolio',
+                description: 'A business portolio about me',
+                date: 'August 2025',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'Next',
+                        url: '',
+                        img: 'next.svg'
+                    },
+                    {
+                        name: 'TypeScript',
+                        url: '',
+                        img: 'typescript.svg'
+                    }
+                ],
                 flags: []
             },
             {
@@ -37,7 +80,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'A furniture management tool for business',
                 date: 'May 2024',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             },
         ]
@@ -46,11 +95,17 @@ const tabs: TechJourneyContent[] = [
         name: 'Tech training',
         contents: [
             {
-                name: 'Two-year technical diploma in IT services',
+                name: 'Two-year technical degree',
                 description: 'A school training to learn IT basics - ICSAA',
                 date: 'September 2019 - July 2021',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             },
             {
@@ -58,7 +113,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'A bachelor\'s degree specialized in software development - Apprenticeship - CESI',
                 date: 'September 2021 - September 2022',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             },
             {
@@ -66,7 +127,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'A master\'s degree specialized in software architecture - Apprenticeship - CESI',
                 date: 'September 2022 - September 2024',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             }
         ]
@@ -79,7 +146,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'I worked on compliance procedures related to AML/CFT regulations.',
                 date: 'September 2024 - July 2025',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             },
             {
@@ -87,7 +160,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'Contributed to a strategic migration project at Mutavie, focused on decoupling and exposing business logic through standardized APIs, allowing seamless access by the parent company.',
                 date: 'July 2025 - Now',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             }
         ]
@@ -100,7 +179,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'A discord bot',
                 date: '',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             },
             {
@@ -108,7 +193,13 @@ const tabs: TechJourneyContent[] = [
                 description: 'A furniture management tool',
                 date: '',
                 gitRepository: '',
-                stack: '',
+                stacks: [
+                    {
+                        name: 'JavaScript',
+                        url: '',
+                        img: ''
+                    }
+                ],
                 flags: []
             }
         ]
@@ -132,12 +223,10 @@ export default function TechJourney() {
                                 ))}
                             </TabsList>
                             {tabs.map((tab, index) => (
-                                <TabsContent key={tab.name} value={tab.name}>
-                                    <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
-                                        {tab.contents.map((content, index) => (
-                                            <Content key={content.name} content={content}/>
-                                        ))}
-                                    </div>
+                                <TabsContent className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4" key={tab.name} value={tab.name}>
+                                    {tab.contents.map((content, index) => (
+                                        <Content key={content.name} content={content}/>
+                                    ))}
                                 </TabsContent>
                             ))}
                         </Tabs>

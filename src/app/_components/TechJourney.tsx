@@ -12,82 +12,77 @@ const tabs: TechJourneyContent[] = [
                 name: 'Bot Discord Lucario',
                 description: 'A certified bot discord with over 75 servers',
                 date: 'March 2021',
-                gitRepository: '',
+                redirectUrl: '',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: 'javascript.svg'
                     },
                     {
                         name: 'Docker',
-                        url: '',
                         img: 'docker.svg'
                     },
                     {
                         name: 'MongoDB',
-                        url: '',
                         img: 'mongo.svg'
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "private.svg"
             },
             {
                 name: 'Dklare',
                 description: 'A furniture management tool for business',
                 date: 'May 2024',
-                gitRepository: '',
+                redirectUrl: '',
                 stacks: [
                     {
                         name: 'Java Spring Boot',
-                        url: '',
                         img: 'spring-boot.svg'
                     },
                     {
                         name: 'Angular',
-                        url: '',
                         img: 'angular.svg'
                     },
                     {
                         name: 'PostgreSQL',
-                        url: '',
                         img: 'postgresql.svg'
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "private.svg"
             },
             {
                 name: 'Portfolio',
                 description: 'A business portolio about me',
                 date: 'August 2025',
-                gitRepository: '',
+                redirectUrl: 'https://github.com/banettetheo/portfolio',
                 stacks: [
                     {
                         name: 'Next',
-                        url: '',
                         img: 'next.svg'
                     },
                     {
                         name: 'TypeScript',
-                        url: '',
                         img: 'typescript.svg'
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "github.svg"
             },
             {
                 name: 'Dklares',
                 description: 'A furniture management tool for business',
                 date: 'May 2024',
-                gitRepository: '',
+                redirectUrl: '',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: ""
             },
         ]
     },
@@ -98,43 +93,43 @@ const tabs: TechJourneyContent[] = [
                 name: 'Two-year technical degree',
                 description: 'A school training to learn IT basics - ICSAA',
                 date: 'September 2019 - July 2021',
-                gitRepository: '',
+                redirectUrl: 'https://www.icssa-niort.com/',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "icssa.png"
             },
             {
                 name: 'Software Engineering Accountant',
                 description: 'A bachelor\'s degree specialized in software development - Apprenticeship - CESI',
                 date: 'September 2021 - September 2022',
-                gitRepository: '',
+                redirectUrl: 'https://www.cesi.fr/',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "cesi.png"
             },
             {
                 name: 'Software Architecture Manager',
                 description: 'A master\'s degree specialized in software architecture - Apprenticeship - CESI',
                 date: 'September 2022 - September 2024',
-                gitRepository: '',
+                redirectUrl: 'https://www.cesi.fr/',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "cesi.png"
             }
         ]
     },
@@ -145,29 +140,29 @@ const tabs: TechJourneyContent[] = [
                 name: 'COVEA - MAAF',
                 description: 'I worked on compliance procedures related to AML/CFT regulations.',
                 date: 'September 2024 - July 2025',
-                gitRepository: '',
+                redirectUrl: 'https://www.maaf.fr/fr/assurance',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "maaf.png"
             },
             {
                 name: 'MACIF - MUTAVIE',
                 description: 'Contributed to a strategic migration project at Mutavie, focused on decoupling and exposing business logic through standardized APIs, allowing seamless access by the parent company.',
                 date: 'July 2025 - Now',
-                gitRepository: '',
+                redirectUrl: 'https://www.macif.fr/',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: "macif.png"
             }
         ]
     },
@@ -178,37 +173,33 @@ const tabs: TechJourneyContent[] = [
                 name: 'Bot Discord Lucario',
                 description: 'A discord bot',
                 date: '',
-                gitRepository: '',
+                redirectUrl: '',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: ""
             },
             {
                 name: 'Dklare',
                 description: 'A furniture management tool',
                 date: '',
-                gitRepository: '',
+                redirectUrl: '',
                 stacks: [
                     {
                         name: 'JavaScript',
-                        url: '',
                         img: ''
                     }
                 ],
-                flags: []
+                flags: [],
+                imgRedirect: ""
             }
         ]
     },
 ]
-
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function TechJourney() {
     return (
@@ -223,7 +214,7 @@ export default function TechJourney() {
                                 ))}
                             </TabsList>
                             {tabs.map((tab, index) => (
-                                <TabsContent className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4" key={tab.name} value={tab.name}>
+                                <TabsContent className="grid xl:grid-cols-3 md:grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-4" key={tab.name} value={tab.name}>
                                     {tab.contents.map((content, index) => (
                                         <Content key={content.name} content={content}/>
                                     ))}

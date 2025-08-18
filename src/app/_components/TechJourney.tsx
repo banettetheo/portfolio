@@ -69,21 +69,7 @@ const tabs: TechJourneyContent[] = [
                 ],
                 flags: [],
                 imgRedirect: "github.svg"
-            },
-            {
-                name: 'Dklares',
-                description: 'A furniture management tool for business',
-                date: 'May 2024',
-                redirectUrl: '',
-                stacks: [
-                    {
-                        name: 'JavaScript',
-                        img: ''
-                    }
-                ],
-                flags: [],
-                imgRedirect: ""
-            },
+            }
         ]
     },
     {
@@ -96,9 +82,17 @@ const tabs: TechJourneyContent[] = [
                 redirectUrl: 'https://www.icssa-niort.com/',
                 stacks: [
                     {
-                        name: 'JavaScript',
-                        img: ''
-                    }
+                        name: 'PHP',
+                        img: 'php.svg'
+                    },
+                    {
+                        name: 'React Native',
+                        img: 'react.svg'
+                    },
+                    {
+                        name: 'Java',
+                        img: 'java.svg'
+                    },
                 ],
                 flags: [],
                 imgRedirect: "icssa.png"
@@ -110,9 +104,17 @@ const tabs: TechJourneyContent[] = [
                 redirectUrl: 'https://www.cesi.fr/',
                 stacks: [
                     {
-                        name: 'JavaScript',
-                        img: ''
-                    }
+                        name: 'Laravel',
+                        img: 'laravel.svg'
+                    },
+                    {
+                        name: 'Flutter',
+                        img: 'flutter.svg'
+                    },
+                    {
+                        name: 'C#',
+                        img: 'csharp.svg'
+                    },
                 ],
                 flags: [],
                 imgRedirect: "cesi.png"
@@ -124,9 +126,29 @@ const tabs: TechJourneyContent[] = [
                 redirectUrl: 'https://www.cesi.fr/',
                 stacks: [
                     {
-                        name: 'JavaScript',
-                        img: ''
-                    }
+                        name: 'Spring Boot',
+                        img: 'spring-boot.svg'
+                    },
+                    {
+                        name: 'C#',
+                        img: 'csharp.svg'
+                    },
+                    {
+                        name: 'Angular',
+                        img: 'angular.svg'
+                    },
+                    {
+                        name: 'Redis',
+                        img: 'redis.svg'
+                    },
+                    {
+                        name: 'MongoDB',
+                        img: 'mongo.svg'
+                    },
+                    {
+                        name: 'Kafka',
+                        img: 'kafka.svg'
+                    },
                 ],
                 flags: [],
                 imgRedirect: "cesi.png"
@@ -143,9 +165,21 @@ const tabs: TechJourneyContent[] = [
                 redirectUrl: 'https://www.maaf.fr/fr/assurance',
                 stacks: [
                     {
-                        name: 'JavaScript',
-                        img: ''
-                    }
+                        name: 'JEE',
+                        img: 'java.svg'
+                    },
+                    {
+                        name: 'Spring',
+                        img: 'spring-boot.svg'
+                    },
+                    {
+                        name: 'PostgreSQL',
+                        img: 'postgresql.svg'
+                    },
+                    {
+                        name: 'Angular',
+                        img: 'angular.svg'
+                    },
                 ],
                 flags: [],
                 imgRedirect: "maaf.png"
@@ -157,9 +191,21 @@ const tabs: TechJourneyContent[] = [
                 redirectUrl: 'https://www.macif.fr/',
                 stacks: [
                     {
-                        name: 'JavaScript',
-                        img: ''
-                    }
+                        name: 'Spring Boot',
+                        img: 'spring-boot.svg'
+                    },
+                    {
+                        name: 'JSP',
+                        img: 'java.svg'
+                    },
+                    {
+                        name: 'React',
+                        img: 'react.svg'
+                    },
+                    {
+                        name: 'Oracle',
+                        img: 'oracle.svg'
+                    },
                 ],
                 flags: [],
                 imgRedirect: "macif.png"

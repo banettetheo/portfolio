@@ -37,7 +37,7 @@ const tabs: TechJourneyContent[] = [
                 redirectUrl: '',
                 stacks: [
                     {
-                        name: 'Java Spring Boot',
+                        name: 'Spring Boot',
                         img: 'spring-boot.svg'
                     },
                     {
@@ -214,7 +214,7 @@ export default function TechJourney() {
                                 ))}
                             </TabsList>
                             {tabs.map((tab, index) => (
-                                <TabsContent className="grid xl:grid-cols-3 md:grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-4" key={tab.name} value={tab.name}>
+                                <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" key={tab.name} value={tab.name}>
                                     {tab.contents.map((content, index) => (
                                         <Content key={content.name} content={content}/>
                                     ))}

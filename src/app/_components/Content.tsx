@@ -11,9 +11,9 @@ import Link from "next/link";
 export default function Content({ content }: { content : CardContentPortolio }) {
     return(
         <Link href={content.redirectUrl}>
-            <Card className="m-1 h-full pb-2 group">
+            <Card className="m-1 h-full w-full h-full overflow-hidden group">
                 <CardHeader className="grid grid-cols-6 items-center">
-                    <img src={content.imgRedirect} alt="" className="size-12"/>
+                    <img src={content.imgRedirect} alt="" className="size-12 col-span-1"/>
                     <div className="col-span-4">
                         <CardTitle>{content.name}</CardTitle>
                         <CardDescription>{content.date}</CardDescription>
@@ -26,9 +26,9 @@ export default function Content({ content }: { content : CardContentPortolio }) 
                 <CardContent className="size-15 w-full overflow-auto">
                     {content.description}
                 </CardContent>
-                <CardFooter className="overflow-x-auto">
-                    {content.stacks.map(stack =>
-                        <Badge className="m-1" key={stack.name} variant="secondary">
+                <CardFooter className="overflow-x-auto whitespace-nowrap px-2">
+                {content.stacks.map(stack =>
+                        <Badge className="m-1 shrink-0 inline-flex" key={stack.name} variant="secondary">
                             <Avatar className="p-1">
                                 <AvatarImage src={stack.img}/>
                             </Avatar>

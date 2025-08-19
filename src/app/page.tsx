@@ -5,7 +5,7 @@ import TechJourney from "@/app/_components/TechJourney";
 
 export default function Home() {
   return (
-      <div className="bg-blue-300">
+      <div>
         <Header/>
         <Hero/>
           <TechJourney/>

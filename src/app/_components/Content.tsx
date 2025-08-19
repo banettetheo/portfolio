@@ -13,7 +13,7 @@ export default function Content({ content }: { content : CardContentPortolio }) 
         <Link href={content.redirectUrl}>
             <Card className="m-1 h-full w-full h-full overflow-hidden group">
                 <CardHeader className="grid grid-cols-6 items-center">
-                    <img src={content.imgRedirect} alt="" className="size-12 col-span-1"/>
+                    <img src={content.imgRedirect} alt="" className="dark:invert dark:brightness-200 size-12 col-span-1"/>
                     <div className="col-span-4">
                         <CardTitle>{content.name}</CardTitle>
                         <CardDescription>{content.date}</CardDescription>

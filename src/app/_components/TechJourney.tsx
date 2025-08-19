@@ -211,66 +211,30 @@ const tabs: TechJourneyContent[] = [
                 imgRedirect: "macif.png"
             }
         ]
-    },
-    {
-        name: 'Skills',
-        contents: [
-            {
-                name: 'Bot Discord Lucario',
-                description: 'A discord bot',
-                date: '',
-                redirectUrl: '',
-                stacks: [
-                    {
-                        name: 'JavaScript',
-                        img: ''
-                    }
-                ],
-                flags: [],
-                imgRedirect: ""
-            },
-            {
-                name: 'Dklare',
-                description: 'A furniture management tool',
-                date: '',
-                redirectUrl: '',
-                stacks: [
-                    {
-                        name: 'JavaScript',
-                        img: ''
-                    }
-                ],
-                flags: [],
-                imgRedirect: ""
-            }
-        ]
-    },
+    }
 ]
 
 export default function TechJourney() {
     return (
-        <div className="relative isolate overflow-hidden bg-linear-to-b from-indigo-100/20 pt-14">
-            <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                    <Card className="mx-auto p-4 shadow overflow-hidden max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                        <Tabs defaultValue={tabs[0].name}>
-                            <TabsList>
-                                {tabs.map((tab, index) => (
-                                    <TabsTrigger key={tab.name} value={tab.name}>{tab.name}</TabsTrigger>
-                                ))}
-                            </TabsList>
+        <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+                <Card className="mx-auto p-4 overflow-hidden max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+                    <Tabs defaultValue={tabs[0].name}>
+                        <TabsList>
                             {tabs.map((tab, index) => (
-                                <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" key={tab.name} value={tab.name}>
-                                    {tab.contents.map((content, index) => (
-                                        <Content key={content.name} content={content}/>
-                                    ))}
-                                </TabsContent>
+                                <TabsTrigger key={tab.name} value={tab.name}>{tab.name}</TabsTrigger>
                             ))}
-                        </Tabs>
-                    </Card>
-                </div>
+                        </TabsList>
+                        {tabs.map((tab, index) => (
+                            <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" key={tab.name} value={tab.name}>
+                                {tab.contents.map((content, index) => (
+                                    <Content key={content.name} content={content}/>
+                                ))}
+                            </TabsContent>
+                        ))}
+                    </Tabs>
+                </Card>
             </div>
-            <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-linear-to-t from-white sm:h-32" />
         </div>
     )
 }

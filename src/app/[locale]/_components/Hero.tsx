@@ -1,4 +1,9 @@
+import {useI18n, useScopedI18n} from "@/locales/client";
+
 export default function Hero() {
+    const t = useI18n()
+    const scopedT = useScopedI18n('hero')
+
     return(
         <div className="relative isolate overflow-hidden bg-linear-to-b from-indigo-100/20 pt-14">
             <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
@@ -8,7 +13,7 @@ export default function Hero() {
                     </h1>
                     <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
                         <p className="text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-                            I&apos;m a fullstack developper living in Niort, France.
+                            {scopedT('description')}
                         </p>
                     </div>
 

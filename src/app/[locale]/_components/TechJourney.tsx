@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {Card} from "@/components/ui/card";
-import Content from "@/app/_components/Content";
+import Content from "@/app/[locale]/_components/Content";
 import {TechJourneyContent} from "@/models/TechJourneyContent";
 
 const tabs: TechJourneyContent[] = [

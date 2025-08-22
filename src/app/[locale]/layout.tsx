@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import '../app/globals.css'
-import {ThemeProvider} from "@/components/theme-provider";
+import {Providers} from "@/app/[locale]/providers";
+import {ReactElement} from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,22 +19,13 @@ export const metadata: Metadata = {
   description: "Displaying some details about my experience",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function RootLayout({ params, children }: { params: Promise<{ locale: string }>, children: ReactElement }) {
+
+    const { locale } = await params
   return (
     <html>
       <body>
-          <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-              >
-          {children}
-          </ThemeProvider>
+              <Providers locale={locale}> {children}</Providers>
       </body>
     </html>
   );

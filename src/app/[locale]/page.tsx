@@ -8,7 +8,7 @@ export default function Home() {
       <div>
         <Header/>
         <Hero/>
-          <TechJourney/>
+        <TechJourney/>
         <Footer/>
       </div>
   );

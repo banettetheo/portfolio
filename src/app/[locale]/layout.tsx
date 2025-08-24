@@ -24,8 +24,8 @@ export default async function RootLayout({ params, children }: { params: Promise
     const { locale } = await params
   return (
     <html>
-      <body>
-              <Providers locale={locale}> {children}</Providers>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <Providers locale={locale}> {children}</Providers>
       </body>
     </html>
   );

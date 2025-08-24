@@ -1,7 +1,7 @@
 import {TabsList} from "@/components/ui/tabs";
 import {TabsListProps} from "@radix-ui/react-tabs";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
-import {CardContentPortolio} from "@/models/CardContentPortolio";
+import {CardContentPortolio} from "@/models/card-content-portolio";
 import { Badge } from "@/components/ui/badge"
 import {Avatar, AvatarImage} from "@/components/ui/avatar";
 import {ArrowUpRight} from "lucide-react";
@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Content({ content }: { content : CardContentPortolio }) {
     return(
         <Link href={content.redirectUrl}>
-            <Card className="m-1 h-full w-full h-full overflow-hidden group">
+            <Card className="h-full w-full overflow-hidden group">
                 <CardHeader className="grid grid-cols-6 items-center">
                     <img src={content.imgRedirect} alt="" className="dark:invert dark:brightness-200 size-12 col-span-1"/>
                     <div className="col-span-4">

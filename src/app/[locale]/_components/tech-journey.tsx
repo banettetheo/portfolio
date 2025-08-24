@@ -2,7 +2,7 @@ import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {Card} from "@/components/ui/card";
 import Content from "@/app/[locale]/_components/content";
-import {TechJourneyContent} from "@/models/TechJourneyContent";
+import {TechJourneyContent} from "@/models/tech-journey-content";
 
 const tabs: TechJourneyContent[] = [
     {
@@ -218,7 +218,7 @@ export default function TechJourney() {
     return (
         <div className="mx-auto max-w-7xl px-14">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                <Card className="mx-auto p-8 overflow-hidden max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
+                <Card className="mx-auto p-4 overflow-hidden max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
                     <Tabs defaultValue={tabs[0].name}>
                         <TabsList>
                             {tabs.map((tab, index) => (
@@ -226,7 +226,7 @@ export default function TechJourney() {
                             ))}
                         </TabsList>
                         {tabs.map((tab, index) => (
-                            <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" key={tab.name} value={tab.name}>
+                            <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-4" key={tab.name} value={tab.name}>
                                 {tab.contents.map((content, index) => (
                                     <Content key={content.name} content={content}/>
                                 ))}

@@ -1,4 +1,4 @@
-import {StackContent} from "@/models/StackContent";
+import {StackContent} from "@/models/stack-content";
 
 export interface CardContentPortolio {
     name: string,

@@ -21,8 +21,8 @@ export default function Header() {
 
     return (
         <header>
-            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-                <div className="flex lg:flex-1">
+            <nav aria-label="Global" className="grid grid-cols-12 items-center justify-between py-4">
+                <div className="flex col-span-5 col-start-2 sm:col-span-3 sm:col-start-3 md:col-span-3 md:col-start-4 xl:col-span-2 xl:col-start-4">
                     <Link href="https://github.com/banettetheo">
                         <Avatar>
                             <AvatarImage
@@ -35,10 +35,10 @@ export default function Header() {
                     </Link>
                     <h1 className="ml-4 content-center">Théo Banette</h1>
                 </div>
-                <div>
+                <div className="flex col-span-3 col-start-9 sm:col-span-2 sm:col-start-10 md:col-span-2 md:col-start-9 lg:col-span-1 lg:col-start-9 xl:col-span-1 xl:col-start-9 justify-self-end">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button className="m-2" variant="outline" size="icon">
+                            <Button className="mr-2" variant="outline" size="icon">
                                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                                 <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                                 <span className="sr-only">Toggle theme</span>
@@ -58,7 +58,7 @@ export default function Header() {
                     </DropdownMenu>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button className="m-2" variant="outline" size="icon">
+                            <Button variant="outline" size="icon">
                                 { useCurrentLocale() == 'en' ? (
                                         <img src="/us.svg" alt="US" className="size-4"/>
                                     ) : (

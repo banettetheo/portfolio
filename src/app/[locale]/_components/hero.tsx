@@ -6,18 +6,16 @@ export default function Hero() {
     const scopedT = useScopedI18n('hero')
 
     return(
-        <div className="relative isolate overflow-hidden p-14">
-            <div className="mx-auto grid grid-flow-col md:grid-rows-2 lg:grid-rows-3 grid-cols-3 max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
-                <h1 className="max-w-2xl col-span-2 row-span-1 font-semibold tracking-tight text-balance sm:text-7xl lg:col-span-2 xl:col-auto">
-                    Théo Banette
-                </h1>
-                <p className="col-span-2 row-span-1">
-                    {scopedT('description')}
-                </p>
-                <Avatar className="col-span-1 row-span-3 justify-self-end shrink-0 overflow-hidden">
-                    <AvatarImage src="/theo.png" alt="Avatar"/>
-                </Avatar>
-            </div>
+        <div className="grid grid-cols-12 grid-rows-4 items-center justify-between py-14">
+            <h1 className="col-start-3 col-span-4">
+                Théo Banette
+            </h1>
+            <p className="col-start-3 col-span-8 row-span-1">
+                {scopedT('description')}
+            </p>
+            <Avatar className="col-start-5 col-span-4 row-span-2 justify-self-end h-full w-full shrink-0 overflow-hidden">
+                <AvatarImage src="/theo.png" alt="Avatar"/>
+            </Avatar>
         </div>
     );
 }

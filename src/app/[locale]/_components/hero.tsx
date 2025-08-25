@@ -6,7 +6,7 @@ export default function Hero() {
     const scopedT = useScopedI18n('hero')
 
     return(
-        <div className="grid grid-cols-12 grid-rows-2 items-center justify-between py-14 h-70">
+        <div className="grid grid-cols-12 grid-rows-2 items-center justify-between py-14">
             <div className="flex col-start-3 col-span-8 row-span-3 justify-center shrink-0 overflow-hidden">
                 <Avatar className="h-30 w-30 mr-4">
                     <AvatarImage src="/theo.png" alt="Avatar"/>

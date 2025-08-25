@@ -216,25 +216,23 @@ const tabs: TechJourneyContent[] = [
 
 export default function TechJourney() {
     return (
-        <div className="mx-auto max-w-7xl px-14">
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                <Card className="mx-auto p-4 overflow-hidden max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-                    <Tabs defaultValue={tabs[0].name}>
-                        <TabsList>
-                            {tabs.map((tab, index) => (
-                                <TabsTrigger key={tab.name} value={tab.name}>{tab.name}</TabsTrigger>
-                            ))}
-                        </TabsList>
+        <div className="grid grid-cols-12">
+            <Card className="mx-auto p-4 overflow-hidden col-span-10 col-start-2">
+                <Tabs defaultValue={tabs[0].name}>
+                    <TabsList>
                         {tabs.map((tab, index) => (
-                            <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-4" key={tab.name} value={tab.name}>
-                                {tab.contents.map((content, index) => (
-                                    <Content key={content.name} content={content}/>
-                                ))}
-                            </TabsContent>
+                            <TabsTrigger key={tab.name} value={tab.name}>{tab.name}</TabsTrigger>
                         ))}
-                    </Tabs>
-                </Card>
-            </div>
+                    </TabsList>
+                    {tabs.map((tab, index) => (
+                        <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-4" key={tab.name} value={tab.name}>
+                            {tab.contents.map((content, index) => (
+                                <Content key={content.name} content={content}/>
+                            ))}
+                        </TabsContent>
+                    ))}
+                </Tabs>
+            </Card>
         </div>
     )
 }

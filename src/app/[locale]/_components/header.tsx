@@ -22,7 +22,7 @@ export default function Header() {
     return (
         <header>
             <nav aria-label="Global" className="grid grid-cols-12 items-center justify-between py-4">
-                <div className="flex col-span-5 col-start-2 sm:col-span-3 sm:col-start-3 md:col-span-3 md:col-start-4 xl:col-span-2 xl:col-start-4">
+                <div className="flex col-span-5 col-start-2 sm:col-span-3 sm:col-start-2 md:col-span-3 md:col-start-3 lg:col-span-3 lg:col-start-3  xl:col-span-2 xl:col-start-4">
                     <Link href="https://github.com/banettetheo">
                         <Avatar>
                             <AvatarImage
@@ -35,7 +35,7 @@ export default function Header() {
                     </Link>
                     <h1 className="ml-4 content-center">Théo Banette</h1>
                 </div>
-                <div className="flex col-span-3 col-start-9 sm:col-span-2 sm:col-start-10 md:col-span-2 md:col-start-9 lg:col-span-1 lg:col-start-9 xl:col-span-1 xl:col-start-9 justify-self-end">
+                <div className="flex col-span-3 col-start-9 sm:col-span-2 sm:col-start-10 md:col-span-2 md:col-start-9 lg:col-span-1 lg:col-start-10 xl:col-span-1 xl:col-start-9 justify-self-end">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button className="mr-2" variant="outline" size="icon">

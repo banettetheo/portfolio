@@ -1,7 +1,7 @@
-// locales/en.ts
+// locales/fr.ts
 export default {
     'hero': {
-      'description': 'Je suis un petit développeur'
+      'description': 'Je suis un petit développeur vivant à Niort, France'
     },
     'hello': 'Salut',
     'hello.world': 'Hello world!',

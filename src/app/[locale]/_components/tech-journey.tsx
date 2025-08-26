@@ -223,7 +223,7 @@ export default function TechJourney() {
 
     return (
         <div className="grid grid-cols-12">
-            <Card className="mx-auto p-4 overflow-hidden col-span-10 col-start-2">
+            <Card className="p-4 overflow-hidden col-span-10 col-start-2">
                 <Tabs defaultValue={tabs[0].name}>
                     <TabsList>
                         {tabs.map((tab, index) => (

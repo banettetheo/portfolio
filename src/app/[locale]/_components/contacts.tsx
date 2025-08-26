@@ -2,34 +2,75 @@ import {CardContentPortolio} from "@/models/card-content-portolio";
 import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {ArrowUpRight} from "lucide-react";
 import {Avatar, AvatarImage} from "@/components/ui/avatar";
+import {useI18n, useScopedI18n} from "@/locales/client";
 
 export default function Contacts() {
-    return (
-        <div className="mx-auto max-w-7xl p-14">
-            <h1 className="my-4">Contacts</h1>
-            <div className="grid md:grid-cols-3 lg:grid-cols-3">
-                <Card>
-                    <CardHeader className="grid grid-cols-3 items-center">
-                        <div className="flex items-center justify-between gap-x-2 col-span-1">
-                            <Avatar className="p-1">
-                                <AvatarImage src="/theo.png" alt="Avatar"/>
-                            </Avatar>
-                            <Avatar className="p-1">
-                                <AvatarImage src="/linkedin.svg" alt="Avatar"/>
-                            </Avatar>
-                        </div>
-                        <div className="col-span-1">
-                            <CardTitle>test</CardTitle>
-                            <CardDescription>dateTest</CardDescription>
-                        </div>
-                        <div className="col-span-1 justify-items-end">
-                            { true ?
-                                <ArrowUpRight className="group-hover:translate-x-2 mr-2 group-hover:-translate-y-2 transition-transform ml-2 justify-end" size={16}/> : null }
-                        </div>
-                    </CardHeader>
-                </Card>
+    const t = useI18n()
+    const scopedT = useScopedI18n('contacts')
 
-            </div>
+    return (
+        <div className="grid grid-cols-12 grid-rows-4 col items-center justify-between h-100 py-14">
+            <h1 className="my-4 col-start-2 col-span-10">{scopedT('section')}</h1>
+            <Card className="col-start-2 row-span-2 col-span-10">
+                <CardHeader className="flex items-center">
+                    <div className="relative h-15">
+                        <Avatar className="h-15 w-15 mr-4">
+                            <AvatarImage src="/theo.png" alt="Avatar"/>
+                        </Avatar>
+                        <Avatar className="bottom-6 -right-8 object-contain">
+                            <AvatarImage src="/linkedin.svg" alt="Avatar"/>
+                        </Avatar>
+                    </div>
+                    <div className="mr-auto">
+                        <CardTitle>{scopedT('titleLinkedIn')}</CardTitle>
+                        <CardDescription>{scopedT('descriptionLinkedIn')}</CardDescription>
+                    </div>
+                    <div className="col-span-1">
+                        { true ?
+                            <ArrowUpRight className="group-hover:translate-x-2 mr-2 group-hover:-translate-y-2 transition-transform ml-2 justify-end" size={16}/> : null }
+                    </div>
+                </CardHeader>
+            </Card>
+            <Card className="col-start-2 row-span-2 col-span-10">
+                <CardHeader className="flex items-center">
+                    <div className="relative h-15">
+                        <Avatar className="h-15 w-15 mr-4">
+                            <AvatarImage src="/theo.png" alt="Avatar"/>
+                        </Avatar>
+                        <Avatar className="bottom-6 -right-8 object-contain">
+                            <AvatarImage src="/linkedin.svg" alt="Avatar"/>
+                        </Avatar>
+                    </div>
+                    <div className="mr-auto">
+                        <CardTitle>{scopedT('titlePhone')}</CardTitle>
+                        <CardDescription>{scopedT('descriptionPhone')}</CardDescription>
+                    </div>
+                    <div className="col-span-1">
+                        { true ?
+                            <ArrowUpRight className="group-hover:translate-x-2 mr-2 group-hover:-translate-y-2 transition-transform ml-2 justify-end" size={16}/> : null }
+                    </div>
+                </CardHeader>
+            </Card>
+            <Card className="col-start-2 row-span-2 col-span-10">
+                <CardHeader className="flex items-center">
+                    <div className="relative h-15">
+                        <Avatar className="h-15 w-15 mr-4">
+                            <AvatarImage src="/theo.png" alt="Avatar"/>
+                        </Avatar>
+                        <Avatar className="bottom-6 -right-8 object-contain">
+                            <AvatarImage src="/linkedin.svg" alt="Avatar"/>
+                        </Avatar>
+                    </div>
+                    <div className="mr-auto">
+                        <CardTitle>{scopedT('titleMail')}</CardTitle>
+                        <CardDescription>{scopedT('descriptionMail')}</CardDescription>
+                    </div>
+                    <div className="col-span-1">
+                        { true ?
+                            <ArrowUpRight className="group-hover:translate-x-2 mr-2 group-hover:-translate-y-2 transition-transform ml-2 justify-end" size={16}/> : null }
+                    </div>
+                </CardHeader>
+            </Card>
         </div>
     )
 }

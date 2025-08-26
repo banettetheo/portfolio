@@ -1,5 +1,3 @@
-import {TabsList} from "@/components/ui/tabs";
-import {TabsListProps} from "@radix-ui/react-tabs";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {CardContentPortolio} from "@/models/card-content-portolio";
 import { Badge } from "@/components/ui/badge"

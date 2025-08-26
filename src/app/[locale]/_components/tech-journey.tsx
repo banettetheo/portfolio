@@ -1,12 +1,12 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {Card} from "@/components/ui/card";
 import Content from "@/app/[locale]/_components/content";
 import {TechJourneyContent} from "@/models/tech-journey-content";
+import {useI18n, useScopedI18n} from "@/locales/client";
 
 const tabs: TechJourneyContent[] = [
     {
-        name: 'Projects',
+        name: '',
         contents: [
             {
                 name: 'Bot Discord Lucario',
@@ -215,6 +215,12 @@ const tabs: TechJourneyContent[] = [
 ]
 
 export default function TechJourney() {
+    const t = useI18n()
+
+    tabs[0].name = t('projects');
+    tabs[1].name = t('trainings');
+    tabs[2].name = t('pro');
+
     return (
         <div className="grid grid-cols-12">
             <Card className="mx-auto p-4 overflow-hidden col-span-10 col-start-2">

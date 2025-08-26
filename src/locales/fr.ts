@@ -15,6 +15,7 @@ export default {
         'descriptionPhone': '06 06 86 60 22',
         'titleMail': 'Mail',
         'descriptionMail': 'theobanette@gmail.com',
+        'copy': 'Copié !'
     },
     'hello': 'Salut',
     'hello.world': 'Hello world!',

@@ -33,7 +33,7 @@ export default function Contacts() {
     };
 
     return (
-        <div className="grid grid-cols-12 grid-rows-4 items-center justify-between h-100 pt-14">
+        <div className="grid grid-cols-12 grid-rows-4 items-center justify-between h-100 py-14">
             <h1 className="text-xl italic col-start-2 col-span-10">{scopedT('section')}</h1>
             <Link className="col-start-2 row-span-1 col-span-10" href="https://www.linkedin.com/in/theobanette/">
                 <Card className="py-2">

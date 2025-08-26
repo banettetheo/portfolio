@@ -9,15 +9,15 @@ export default function Contacts() {
     const scopedT = useScopedI18n('contacts')
 
     return (
-        <div className="grid grid-cols-12 grid-rows-4 col items-center justify-between h-100 py-14">
-            <h1 className="my-4 col-start-2 col-span-10">{scopedT('section')}</h1>
-            <Card className="col-start-2 row-span-2 col-span-10">
+        <div className="grid grid-cols-12 grid-rows-4 gap-y-6 items-center justify-between h-100 py-14">
+            <h1 className="text-2xl italic col-start-2 col-span-10">{scopedT('section')}</h1>
+            <Card className="col-start-2 row-span-1 col-span-10 py-2">
                 <CardHeader className="flex items-center">
-                    <div className="relative h-15">
-                        <Avatar className="h-15 w-15 mr-4">
+                    <div className="relative h-10">
+                        <Avatar className="h-10 w-10 mr-4">
                             <AvatarImage src="/theo.png" alt="Avatar"/>
                         </Avatar>
-                        <Avatar className="bottom-6 -right-8 object-contain">
+                        <Avatar className="h-7 w-7 bottom-6 -right-5 object-contain">
                             <AvatarImage src="/linkedin.svg" alt="Avatar"/>
                         </Avatar>
                     </div>
@@ -31,13 +31,13 @@ export default function Contacts() {
                     </div>
                 </CardHeader>
             </Card>
-            <Card className="col-start-2 row-span-2 col-span-10">
+            <Card className="col-start-2 row-span-1 col-span-10 py-2">
                 <CardHeader className="flex items-center">
-                    <div className="relative h-15">
-                        <Avatar className="h-15 w-15 mr-4">
+                    <div className="relative h-10">
+                        <Avatar className="h-10 w-10 mr-4">
                             <AvatarImage src="/theo.png" alt="Avatar"/>
                         </Avatar>
-                        <Avatar className="bottom-6 -right-8 object-contain">
+                        <Avatar className="h-7 w-7 bottom-6 -right-5 object-contain">
                             <AvatarImage src="/linkedin.svg" alt="Avatar"/>
                         </Avatar>
                     </div>
@@ -51,13 +51,13 @@ export default function Contacts() {
                     </div>
                 </CardHeader>
             </Card>
-            <Card className="col-start-2 row-span-2 col-span-10">
+            <Card className="col-start-2 row-span-1 col-span-10 py-2">
                 <CardHeader className="flex items-center">
-                    <div className="relative h-15">
-                        <Avatar className="h-15 w-15 mr-4">
+                    <div className="relative h-10">
+                        <Avatar className="h-10 w-10 mr-4">
                             <AvatarImage src="/theo.png" alt="Avatar"/>
                         </Avatar>
-                        <Avatar className="bottom-6 -right-8 object-contain">
+                        <Avatar className="h-7 w-7 bottom-6 -right-5 object-contain">
                             <AvatarImage src="/linkedin.svg" alt="Avatar"/>
                         </Avatar>
                     </div>

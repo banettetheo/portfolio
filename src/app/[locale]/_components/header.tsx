@@ -7,6 +7,7 @@ import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger
 import {useTheme} from "next-themes";
 import {Button} from "@/components/ui/button";
 import {useChangeLocale, useCurrentLocale} from "@/locales/client";
+import Container from "@/app/[locale]/_components/container";
 
 const navigation = [
     { name: 'Projects', href: '#projects' },
@@ -21,63 +22,65 @@ export default function Header() {
 
     return (
         <header>
-            <nav aria-label="Global" className="grid grid-cols-12 items-center justify-between py-4">
-                <div className="flex col-span-5 col-start-2 sm:col-span-3 sm:col-start-3 md:col-span-3 md:col-start-3 lg:col-span-3 lg:col-start-3  xl:col-span-2 xl:col-start-4">
-                    <Link href="https://github.com/banettetheo">
-                        <Avatar>
-                            <AvatarImage
-                                src="/github.svg"
-                                alt="GitHub"
-                                className="dark:invert dark:brightness-200"
-                            />
-                        </Avatar>
+            <nav aria-label="Global">
+                <Container>
+                    <div className="flex col-span-11 content-start">
+                        <Link href="https://github.com/banettetheo">
+                            <Avatar>
+                                <AvatarImage
+                                    src="/github.svg"
+                                    alt="GitHub"
+                                    className="dark:invert dark:brightness-200"
+                                />
+                            </Avatar>
 
-                    </Link>
-                    <h1 className="ml-4 content-center">Théo Banette</h1>
-                </div>
-                <div className="flex col-span-3 col-start-9 sm:col-span-2 sm:col-start-9 md:col-span-2 md:col-start-9 lg:col-span-1 lg:col-start-10 xl:col-span-1 xl:col-start-9 justify-self-end">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button className="mr-2" variant="outline" size="icon">
-                                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                                <span className="sr-only">Toggle theme</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => setTheme("light")}>
-                                Light
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => setTheme("dark")}>
-                                Dark
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => setTheme("system")}>
-                                System
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="outline" size="icon">
-                                { useCurrentLocale() == 'en' ? (
-                                        <img src="/us.svg" alt="US" className="size-4"/>
-                                    ) : (
-                                        <img src="/fr.svg" alt="FR" className="size-4"/>
-                                    )}
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => changeLocale('en')}>
-                                <img src="/us.svg" alt="US" className="size-4"/>
-                                <p>Anglais</p>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => changeLocale('fr')}>
-                                <img src="/fr.svg" alt="FR" className="size-4"/>
-                                <p>Français</p>
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
+                        </Link>
+                        <h1 className="ml-4 content-center">Théo Banette</h1>
+                    </div>
+                    <div className="flex justify-self-end">
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button className="mr-2" variant="outline" size="icon">
+                                    <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                                    <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                                    <span className="sr-only">Toggle theme</span>
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuItem onClick={() => setTheme("light")}>
+                                    Light
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                                    Dark
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => setTheme("system")}>
+                                    System
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="outline" size="icon">
+                                    { useCurrentLocale() == 'en' ? (
+                                            <img src="/us.svg" alt="US" className="size-4"/>
+                                        ) : (
+                                            <img src="/fr.svg" alt="FR" className="size-4"/>
+                                        )}
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <DropdownMenuItem onClick={() => changeLocale('en')}>
+                                    <img src="/us.svg" alt="US" className="size-4"/>
+                                    <p>Anglais</p>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => changeLocale('fr')}>
+                                    <img src="/fr.svg" alt="FR" className="size-4"/>
+                                    <p>Français</p>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
+                </Container>
             </nav>
         </header>
     )

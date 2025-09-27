@@ -223,7 +223,7 @@ export default function TechJourney() {
 
     return (
         <div className="grid grid-cols-12">
-            <Card className="p-4 overflow-hidden col-span-10 col-start-2">
+            <Card className="p-4 overflow-hidden col-span-10 col-start-2 sm:col-start-3 sm:col-span-8 xl:col-start-4 xl:col-span-6">
                 <Tabs defaultValue={tabs[0].name}>
                     <TabsList>
                         {tabs.map((tab, index) => (
@@ -231,7 +231,7 @@ export default function TechJourney() {
                         ))}
                     </TabsList>
                     {tabs.map((tab, index) => (
-                        <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-4" key={tab.name} value={tab.name}>
+                        <TabsContent className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 py-4" key={tab.name} value={tab.name}>
                             {tab.contents.map((content, index) => (
                                 <Content key={content.name} content={content}/>
                             ))}

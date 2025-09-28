@@ -3,6 +3,7 @@ import {Card} from "@/components/ui/card";
 import Content from "@/app/[locale]/_components/content";
 import {TechJourneyContent} from "@/models/tech-journey-content";
 import {useI18n, useScopedI18n} from "@/locales/client";
+import Container from "@/app/[locale]/_components/container";
 
 const tabs: TechJourneyContent[] = [
     {
@@ -163,8 +164,8 @@ export default function TechJourney() {
     tabs[2].name = t('pro');
 
     return (
-        <div className="grid grid-cols-12">
-            <Card className="p-4 overflow-hidden col-span-10 col-start-2 sm:col-start-3 sm:col-span-8 xl:col-start-4 xl:col-span-6">
+        <Container>
+            <Card className="p-4 col-span-12 overflow-hidden">
                 <Tabs defaultValue={tabs[0].name}>
                     <TabsList>
                         {tabs.map((tab, index) => (
@@ -180,6 +181,6 @@ export default function TechJourney() {
                     ))}
                 </Tabs>
             </Card>
-        </div>
+        </Container>
     )
 }

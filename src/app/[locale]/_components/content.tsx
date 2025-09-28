@@ -4,17 +4,21 @@ import { Badge } from "@/components/ui/badge"
 import {Avatar, AvatarImage} from "@/components/ui/avatar";
 import {ArrowUpRight} from "lucide-react";
 import Link from "next/link";
+import {useCurrentLocale} from "@/locales/client";
 
 
 export default function Content({ content }: { content : CardContentPortolio }) {
+
+
+
     return(
         <Link href={content.redirectUrl}>
             <Card className="h-full w-full overflow-hidden group">
                 <CardHeader className="grid grid-cols-6 items-center">
                     <img src={content.imgRedirect} alt="" className="dark:invert dark:brightness-200 size-12 col-span-1"/>
                     <div className="col-span-4">
-                        <CardTitle>{content.name}</CardTitle>
-                        <CardDescription>{content.date}</CardDescription>
+                        <CardTitle>{useCurrentLocale() == 'en' ? content.enName : content.frName}</CardTitle>
+                        <CardDescription>{useCurrentLocale() == 'en' ? content.enDate : content.frDate}</CardDescription>
                     </div>
                     <div className="col-span-1 justify-items-end">
                         { content.redirectUrl ?
@@ -22,7 +26,7 @@ export default function Content({ content }: { content : CardContentPortolio }) 
                     </div>
                 </CardHeader>
                 <CardContent className="size-15 w-full overflow-auto">
-                    {content.description}
+                    {useCurrentLocale() == 'en' ? content.enDescription : content.frDescription}
                 </CardContent>
                 <CardFooter className="overflow-x-auto whitespace-nowrap px-2">
                 {content.stacks.map(stack =>

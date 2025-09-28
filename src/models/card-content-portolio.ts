@@ -1,9 +1,12 @@
 import {StackContent} from "@/models/stack-content";
 
 export interface CardContentPortolio {
-    name: string,
-    description: string,
-    date: string,
+    enName: string,
+    frName: string,
+    enDescription: string,
+    frDescription: string,
+    enDate: string,
+    frDate: string,
     imgRedirect: string,
     redirectUrl: string,
     stacks: StackContent[],

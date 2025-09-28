@@ -74,7 +74,7 @@ export default function Contacts() {
                         </div>
                         <div className="col-span-1">
                             {copied ? (
-                                <span className="text-xs text-green-500">{scopedT('copy')}</span>
+                                <span className="text-xs truncate text-green-500">{scopedT('copy')}</span>
                             ) : (
                                 <Copy className="mr-2" size={16} />
                             )}

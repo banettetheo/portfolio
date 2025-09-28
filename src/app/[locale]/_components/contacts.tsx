@@ -1,5 +1,5 @@
 import {CardContentPortolio} from "@/models/card-content-portolio";
-import {Card, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {ArrowUpRight, Copy} from "lucide-react";
 import {Avatar, AvatarImage} from "@/components/ui/avatar";
 import {useI18n, useScopedI18n} from "@/locales/client";
@@ -14,15 +14,19 @@ import {
 } from "@/components/ui/sheet";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import { useForm, ValidationError } from '@formspree/react';
+import {Label} from "@/components/ui/label";
+import {Input} from "@/components/ui/input";
+import {Textarea} from "@/components/ui/textarea";
 
 export default function Contacts() {
-    const t = useI18n()
-    const scopedT = useScopedI18n('contacts')
+    const scopedTContacts = useScopedI18n('contacts')
+    const scopedTMailForm = useScopedI18n('mailForm')
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(scopedT('descriptionPhone'))
+        navigator.clipboard.writeText(scopedTContacts('descriptionPhone'))
             .then(() => {
                 setCopied(true);
                 setTimeout(() => setCopied(false), 2000);
@@ -32,10 +36,20 @@ export default function Contacts() {
             });
     };
 
+    const [open, setOpen] = useState(false);
+    const [state, handleSubmit] = useForm("mvgwzerp");
+
+    // 🔥 Dès que Formspree indique success, on ferme le Sheet
+    useEffect(() => {
+        if (state.succeeded) {
+            setOpen(false);
+        }
+    }, [state.succeeded]);
+
     return (
         <div className="grid grid-cols-12 items-center justify-between py-14">
             <div className="grid grid-cols-12 col-start-2 col-span-10 sm:col-start-3 sm:col-span-8 xl:col-start-4 xl:col-span-6 gap-4">
-                <h1 className="text-xl italic col-span-10 my-4">{scopedT('section')}</h1>
+                <h1 className="text-xl italic col-span-10 my-4">{scopedTContacts('section')}</h1>
                 <Link className="col-span-12 lg:col-span-4" href="https://www.linkedin.com/in/theobanette/">
                     <Card className="py-2 place-content-center">
                         <CardHeader className="flex items-center">
@@ -48,8 +62,8 @@ export default function Contacts() {
                                 </Avatar>
                             </div>
                             <div className="mr-auto truncate">
-                                <CardTitle>{scopedT('titleLinkedIn')}</CardTitle>
-                                <CardDescription>{scopedT('descriptionLinkedIn')}</CardDescription>
+                                <CardTitle>{scopedTContacts('titleLinkedIn')}</CardTitle>
+                                <CardDescription>{scopedTContacts('descriptionLinkedIn')}</CardDescription>
                             </div>
                             <div className="col-span-1">
                                 { true ?
@@ -69,19 +83,19 @@ export default function Contacts() {
                             </Avatar>
                         </div>
                         <div className="mr-auto truncate">
-                            <CardTitle>{scopedT('titlePhone')}</CardTitle>
-                            <CardDescription>{scopedT('descriptionPhone')}</CardDescription>
+                            <CardTitle>{scopedTContacts('titlePhone')}</CardTitle>
+                            <CardDescription>{scopedTContacts('descriptionPhone')}</CardDescription>
                         </div>
                         <div className="col-span-1">
                             {copied ? (
-                                <span className="text-xs truncate text-green-500">{scopedT('copy')}</span>
+                                <span className="text-xs truncate text-green-500">{scopedTContacts('copy')}</span>
                             ) : (
                                 <Copy className="mr-2" size={16} />
                             )}
                         </div>
                     </CardHeader>
                 </Card>
-                <Sheet>
+                <Sheet open={open} onOpenChange={setOpen}>
                     <SheetTrigger asChild>
                         <Card className="col-span-12 py-2 lg:col-span-4 place-content-center">
                             <CardHeader className="flex items-center">
@@ -94,8 +108,8 @@ export default function Contacts() {
                                     </Avatar>
                                 </div>
                                 <div className="mr-auto truncate">
-                                    <CardTitle>{scopedT('titleMail')}</CardTitle>
-                                    <CardDescription className="">{scopedT('descriptionMail')}</CardDescription>
+                                    <CardTitle>{scopedTContacts('titleMail')}</CardTitle>
+                                    <CardDescription className="">{scopedTContacts('descriptionMail')}</CardDescription>
                                 </div>
                                 <div className="col-span-1">
                                     { true ?
@@ -106,27 +120,52 @@ export default function Contacts() {
                     </SheetTrigger>
                     <SheetContent>
                         <SheetHeader>
-                            <SheetTitle>Edit profile</SheetTitle>
+                            <SheetTitle>{scopedTMailForm('title')}</SheetTitle>
                             <SheetDescription>
-                                Make changes to your profile here. Click save when you&apos;re done.
+                                {scopedTMailForm('description')}
                             </SheetDescription>
                         </SheetHeader>
-                        <div className="grid flex-1 auto-rows-min gap-6 px-4">
-                            <div className="grid gap-3">
-                                {/*<Label htmlFor="sheet-demo-name">Name</Label>*/}
-                                {/*<Input id="sheet-demo-name" defaultValue="Pedro Duarte" />*/}
-                            </div>
-                            <div className="grid gap-3">
-                                {/*<Label htmlFor="sheet-demo-username">Username</Label>*/}
-                                {/*<Input id="sheet-demo-username" defaultValue="@peduarte" />*/}
-                            </div>
-                        </div>
-                        <SheetFooter>
-                            <Button type="submit">Save changes</Button>
-                            <SheetClose asChild>
-                                <Button variant="outline">Close</Button>
-                            </SheetClose>
-                        </SheetFooter>
+                        <form onSubmit={handleSubmit}>
+                            <CardContent className="space-y-4">
+                                <div>
+                                    <Label htmlFor="firstname">First Name</Label>
+                                    <Input id="firstname" name="Prénom" required />
+                                    <ValidationError prefix="Firstname" field="firstname" errors={state.errors} />
+                                </div>
+
+                                <div>
+                                    <Label htmlFor="lastname">Last Name</Label>
+                                    <Input id="lastname" name="Nom de Famille" required />
+                                    <ValidationError prefix="Lastname" field="lastname" errors={state.errors} />
+                                </div>
+
+                                <div>
+                                    <Label htmlFor="object">Mail Object</Label>
+                                    <Input id="object" name="Objet du mail" required />
+                                    <ValidationError prefix="Object" field="object" errors={state.errors} />
+                                </div>
+
+                                <div>
+                                    <Label htmlFor="email">Adresse email</Label>
+                                    <Input id="email" type="email" name="Adresse Email" required />
+                                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+                                </div>
+
+                                <div>
+                                    <Label htmlFor="message">Message</Label>
+                                    <Textarea id="message" name="Contenu du mail" required rows={4} />
+                                    <ValidationError prefix="Message" field="message" errors={state.errors} />
+                                </div>
+                            </CardContent>
+                            <SheetFooter>
+                                <Button type="submit" disabled={state.submitting} className="w-full">
+                                    {state.submitting ? "Envoi en cours..." : "Envoyer"}
+                                </Button>
+                                <SheetClose asChild>
+                                    <Button variant="outline">{scopedTMailForm('closeBtn')}</Button>
+                                </SheetClose>
+                            </SheetFooter>
+                        </form>
                     </SheetContent>
                 </Sheet>
             </div>

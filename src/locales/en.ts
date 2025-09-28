@@ -17,6 +17,12 @@ export default {
         'descriptionMail': 'theobanette@gmail.com',
         'copy': 'Copied !'
     },
+    'mailForm': {
+        'title': 'Send an email',
+        'description': 'Fill the form and click on the button below when ready',
+        'sendBtn': 'Send',
+        'closeBtn': 'Close',
+    },
     'hello': 'Salut',
     'hello.world': 'Hello world!',
     'welcome': 'Hello {name}!'

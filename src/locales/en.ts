@@ -1,7 +1,7 @@
 // locales/en.ts
 export default {
     'hero': {
-        'description': 'I\'m a little developper living in Niort, France',
+        'description': 'Full-stack developer specialized in Java / Spring Boot and modern frontend (Angular, Next.js, TypeScript). I have worked on professional projects (Mutavie, MAAF, COVEA) and personal ones (certified Discord bot, portfolio). I design reliable, user-oriented solutions.',
         'role': 'Full Stack Developer',
     },
     'projects': 'Projects',

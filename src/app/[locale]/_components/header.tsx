@@ -22,7 +22,7 @@ export default function Header() {
 
     return (
         <header>
-            <nav aria-label="Global">
+            <nav aria-label="Global" className="pt-6">
                 <Container>
                     <div className="flex col-span-11 content-start">
                         <Link href="https://github.com/banettetheo">

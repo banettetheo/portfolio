@@ -9,8 +9,6 @@ import {useCurrentLocale} from "@/locales/client";
 
 export default function Content({ content }: { content : CardContentPortolio }) {
 
-
-
     return(
         <Link href={content.redirectUrl}>
             <Card className="h-full w-full overflow-hidden group">
@@ -29,7 +27,7 @@ export default function Content({ content }: { content : CardContentPortolio }) 
                     {useCurrentLocale() == 'en' ? content.enDescription : content.frDescription}
                 </CardContent>
                 <CardFooter className="overflow-x-auto whitespace-nowrap px-2">
-                {content.stacks.map(stack =>
+                    {content.stacks.map(stack =>
                         <Badge className="m-1 shrink-0 inline-flex" key={stack.name} variant="secondary">
                             <Avatar className="p-1">
                                 <AvatarImage src={stack.img}/>

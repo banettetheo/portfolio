@@ -1,6 +1,7 @@
 import {useI18n, useScopedI18n} from "@/locales/client";
 import {Avatar, AvatarImage} from "@/components/ui/avatar";
 import Container from "@/app/[locale]/_components/container";
+import {Separator} from "@/components/ui/separator";
 
 export default function Hero() {
     const t = useI18n()
@@ -8,7 +9,7 @@ export default function Hero() {
 
     return(
         <Container>
-            <div className="flex col-start-3 col-span-8 row-span-3 xl:col-start-4 xl:col-span-6 justify-center shrink-0 overflow-hidden">
+            <div className="flex col-span-12 lg:col-start-2 lg:col-span-4 justify-center place-items-center shrink-0 overflow-hidden">
                 <Avatar className="h-30 w-30 mr-4">
                     <AvatarImage src="/theo.png" alt="Avatar"/>
                 </Avatar>
@@ -21,7 +22,8 @@ export default function Hero() {
                     </h2>
                 </div>
             </div>
-            <p className="col-start-3 col-span-8 xl:col-start-4 xl:col-span-6 text-center mt-10">
+            <Separator className="lg:col-span-2 lg:justify-self-center" orientation="vertical" />
+            <p className="mt-10 col-span-12 lg:col-span-4 lg:mt-0 text-justify place-content-center ">
                 {scopedT('description')}
             </p>
         </Container>

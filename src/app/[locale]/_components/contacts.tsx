@@ -20,10 +20,12 @@ import {Label} from "@/components/ui/label";
 import {Input} from "@/components/ui/input";
 import {Textarea} from "@/components/ui/textarea";
 import Container from "@/app/[locale]/_components/container";
+import {toast} from "sonner";
 
 export default function Contacts() {
     const scopedTContacts = useScopedI18n('contacts')
     const scopedTMailForm = useScopedI18n('mailForm')
+    const scopedTMailToast = useScopedI18n('toastMail')
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
@@ -44,6 +46,7 @@ export default function Contacts() {
     useEffect(() => {
         if (state.succeeded) {
             setOpen(false);
+            toast.success(scopedTMailToast('title'))
         }
     }, [state.succeeded]);
 
@@ -126,40 +129,40 @@ export default function Contacts() {
                         </SheetDescription>
                     </SheetHeader>
                     <form onSubmit={handleSubmit}>
-                        <CardContent className="space-y-4">
+                        <CardContent className="space-y-4 pb-5">
                             <div>
-                                <Label htmlFor="firstname">First Name</Label>
+                                <Label className="py-2" htmlFor="firstname">{scopedTMailForm('firstName')}</Label>
                                 <Input id="firstname" name="Prénom" required />
                                 <ValidationError prefix="Firstname" field="firstname" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label htmlFor="lastname">Last Name</Label>
+                                <Label className="py-2" htmlFor="lastname">{scopedTMailForm('lastName')}</Label>
                                 <Input id="lastname" name="Nom de Famille" required />
                                 <ValidationError prefix="Lastname" field="lastname" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label htmlFor="object">Mail Object</Label>
+                                <Label className="py-2" htmlFor="object">{scopedTMailForm('mailObject')}</Label>
                                 <Input id="object" name="Objet du mail" required />
                                 <ValidationError prefix="Object" field="object" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label htmlFor="email">Adresse email</Label>
+                                <Label className="py-2" htmlFor="email">{scopedTMailForm('email')}</Label>
                                 <Input id="email" type="email" name="Adresse Email" required />
                                 <ValidationError prefix="Email" field="email" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label htmlFor="message">Message</Label>
+                                <Label className="py-2" htmlFor="message">{scopedTMailForm('message')}</Label>
                                 <Textarea id="message" name="Contenu du mail" required rows={4} />
                                 <ValidationError prefix="Message" field="message" errors={state.errors} />
                             </div>
                         </CardContent>
                         <SheetFooter>
                             <Button type="submit" disabled={state.submitting} className="w-full">
-                                {state.submitting ? "Envoi en cours..." : "Envoyer"}
+                                {state.submitting ? scopedTMailForm('sendInProgress') : scopedTMailForm('sendBtn')}
                             </Button>
                             <SheetClose asChild>
                                 <Button variant="outline">{scopedTMailForm('closeBtn')}</Button>

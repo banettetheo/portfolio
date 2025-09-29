@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Providers} from "@/app/[locale]/providers";
 import {ReactElement} from "react";
+import {Toaster} from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default async function RootLayout({ params, children }: { params: Promise
         <html lang={locale}>
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
               <Providers locale={locale}> {children}</Providers>
+              <Toaster position="top-center" richColors  />
           </body>
         </html>
       );

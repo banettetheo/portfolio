@@ -20,8 +20,17 @@ export default {
     'mailForm': {
         'title': 'Send an email',
         'description': 'Fill the form and click on the button below when ready',
+        'firstName': 'First Name',
+        'lastName': 'Last Name',
+        'email': 'Email',
+        'mailObject': 'Mail Object',
+        'message': 'Message',
+        'sendInProgress': 'Sending in progress',
         'sendBtn': 'Send',
         'closeBtn': 'Close',
+    },
+    'toastMail': {
+        'title': 'Email sent !'
     },
     'hello': 'Salut',
     'hello.world': 'Hello world!',

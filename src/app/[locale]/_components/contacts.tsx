@@ -134,31 +134,31 @@ export default function Contacts() {
                     <form onSubmit={handleSubmit}>
                         <CardContent className="space-y-4 pb-5">
                             <div>
-                                <Label className="py-2" htmlFor="firstname">{scopedTMailForm('firstName')}</Label>
+                                <Label className="py-1" htmlFor="firstname">{scopedTMailForm('firstName')}</Label>
                                 <Input id="firstname" name="Prénom" required />
                                 <ValidationError prefix="Firstname" field="firstname" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label className="py-2" htmlFor="lastname">{scopedTMailForm('lastName')}</Label>
+                                <Label className="py-1" htmlFor="lastname">{scopedTMailForm('lastName')}</Label>
                                 <Input id="lastname" name="Nom de Famille" required />
                                 <ValidationError prefix="Lastname" field="lastname" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label className="py-2" htmlFor="object">{scopedTMailForm('mailObject')}</Label>
+                                <Label className="py-1" htmlFor="object">{scopedTMailForm('mailObject')}</Label>
                                 <Input id="object" name="Objet du mail" required />
                                 <ValidationError prefix="Object" field="object" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label className="py-2" htmlFor="email">{scopedTMailForm('email')}</Label>
+                                <Label className="py-1" htmlFor="email">{scopedTMailForm('email')}</Label>
                                 <Input id="email" type="email" name="Adresse Email" required />
                                 <ValidationError prefix="Email" field="email" errors={state.errors} />
                             </div>
 
                             <div>
-                                <Label className="py-2" htmlFor="message">{scopedTMailForm('message')}</Label>
+                                <Label className="py-1" htmlFor="message">{scopedTMailForm('message')}</Label>
                                 <Textarea id="message" name="Contenu du mail" required rows={4} />
                                 <ValidationError prefix="Message" field="message" errors={state.errors} />
                             </div>

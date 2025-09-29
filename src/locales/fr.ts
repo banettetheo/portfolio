@@ -30,7 +30,8 @@ export default {
         'closeBtn': 'Fermer',
     },
     'toastMail': {
-        'title': 'Email envoyé !',
+        'success': 'Email envoyé !',
+        'error': 'Email non envoyé !'
     },
     'hello': 'Salut',
     'hello.world': 'Hello world!',

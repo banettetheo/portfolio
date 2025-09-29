@@ -46,7 +46,10 @@ export default function Contacts() {
     useEffect(() => {
         if (state.succeeded) {
             setOpen(false);
-            toast.success(scopedTMailToast('title'))
+            toast.success(scopedTMailToast('success'))
+        } else if (state.errors) {
+            setOpen(false);
+            toast.error(scopedTMailToast('error'))
         }
     }, [state.succeeded]);
 
